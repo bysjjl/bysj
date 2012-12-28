@@ -1,0 +1,24 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:h="http://java.sun.com/jsf/html"
+     xmlns:f="http://java.sun.com/jsf/core"
+     xmlns:p="http://primefaces.org/ui">  
+ 
+ <h:head><title>Welcome to JSF_PrimeFaces_Spring_Hibernate Project</title></h:head>
+ <body>
+ <p:button outcome="productDetail" value="Bookmark" icon="ui-icon-star">  
+    <f:param name="productId" value="10" />  
+</p:button>  
+  
+<p:button outcome="productDetail" value="With Icon" icon="ui-icon-star">  
+    <f:param name="productId" value="20" />  
+</p:button>  
+  
+<p:button outcome="productDetail" icon="ui-icon-star" title="Icon Only">  
+    <f:param name="productId" value="30" />  
+</p:button>  
+  
+<p:button outcome="productDetail" value="Bookmark" icon="ui-icon-star" disabled="true">  
+    <f:param name="productId" value="40" />  
+</p:button>  
+</body>
+</html>

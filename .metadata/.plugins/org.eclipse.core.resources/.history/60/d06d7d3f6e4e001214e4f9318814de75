@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form prependId="false" >  
+            <h:panelGrid columns="1">  
+                <p:inputText value="#{helloView.userName}"/>  
+                <p:commandButton value="提交" actionListener="#{helloView.sayHello}" update="panel_display" />  
+            </h:panelGrid>  
+            <h:panelGroup id="panel_display" layout="block">  
+                <h:outputText value="#{helloView.hello}"/>  
+            </h:panelGroup>  
+        </h:form> 
+    </h:body>
+</html>

@@ -1,0 +1,29 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h:form prependId="false">
+		<p:growl id="messages"/>
+		<h:panelGrid columns="1" cellpadding="5">
+			<h:outputText id="msg" value="#{buttonBean.text}" />
+			<p:commandButton id="showDialogButton" value="Destroy the World"
+				onclick="confirmation.show()" type="button" />
+		</h:panelGrid>
+		<p:confirmDialog id="confirmDialog"
+			message="Are you sure about destroying the world?"
+			header="Initiating destroy process" severity="alert"
+			widgetVar="confirmation">
+			<p:commandButton id="confirm" value="Yes Sure" update="messages"
+				oncomplete="confirmation.hide()"
+				actionListener="#{buttonBean.destroyWorld}" />
+			<p:commandButton id="decline" value="Not Yet"
+				onclick="confirmation.hide()" type="button" />
+		</p:confirmDialog>
+	</h:form>
+</body>
+</html>

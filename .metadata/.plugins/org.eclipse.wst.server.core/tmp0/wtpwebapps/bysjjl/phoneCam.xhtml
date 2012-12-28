@@ -1,0 +1,22 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title>Facelet Title</title>
+</h:head>
+<h:form>  
+    <h:panelGrid columns="3">  
+        <p:photoCam widgetVar="pc" listener="#{photoCamBean.oncapture}" update="photos"/>  
+  
+        <p:commandButton type="button" value="Capture" onclick="pc.capture()"/>  
+  
+        <p:imageSwitch effect="zoom" id="photos">  
+            <ui:repeat value="#{photoCamBean.photos}" var="photo">  
+                <p:graphicImage value="/photocam/#{photo}.png" />  
+            </ui:repeat>  
+        </p:imageSwitch>  
+    </h:panelGrid>  
+</h:form>
+</html>
